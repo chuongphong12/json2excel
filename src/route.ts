@@ -1,6 +1,9 @@
 import { createBrowserRouter } from "react-router";
+import { lazy } from "react";
 import App from "./App";
-import Home from "./pages/Home";
+
+// Lazy load page components for code splitting
+const Home = lazy(() => import("./pages/Home"));
 
 const router = createBrowserRouter([
   {
@@ -11,7 +14,7 @@ const router = createBrowserRouter([
         index: true,
         Component: Home,
       },
-    ]
+    ],
   },
 ]);
 
